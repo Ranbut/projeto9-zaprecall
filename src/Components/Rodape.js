@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
-function Rodape(){
+function Rodape({countPerguntas,respostas}){
     return(
         <>
             <RodapeConcluidos>
-                0/4 CONCLUÍDOS
+                {respostas.length}/{countPerguntas} CONCLUÍDOS
             </RodapeConcluidos>
         </>
     );

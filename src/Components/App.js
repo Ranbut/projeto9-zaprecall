@@ -34,7 +34,7 @@ function App() {
         <div>
           {cards.map((cards) => renderizarPerguntas(cards))}
         </div>
-        <Rodape/>
+        <Rodape countPerguntas={countPerguntas} respostas={respostas}/>
       </ScreenContainer>
   </>
   );
