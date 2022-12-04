@@ -28,10 +28,10 @@ function App() {
           <img src={logo} alt="logo" />
           <h1>ZapRecall</h1>
         </LogoContainer>
-        <div>
+        <FlashcardContainer>
           {cards.map((cards) => renderizarPerguntas(cards))}
-        </div>
-        <Rodape countPerguntas={countPerguntas} respostas={respostas}/>
+        </FlashcardContainer>
+        <Rodape countPerguntas={countPerguntas} respostas={respostas} cardsFeitos={cardsFeitos}/>
   </>
   );
 }
@@ -52,6 +52,10 @@ const LogoContainer = styled.div`
   color: #FFFFFF;
   margin-left: 20px;
  }
+`
+
+const FlashcardContainer = styled.div`
+  height: 780px;
 `
 
 export default App;
