@@ -51,38 +51,38 @@ function Flashcard({countPerguntas, question, answer, setCardsFeitos, cardsFeito
                 for(let i = 0; i < respostas.length; i++){
                     if(respostas[i].id === countPerguntas){
                         return(
-                            <PerguntaFechada key={countPerguntas} finalizado={cardsFeitos.includes(countPerguntas)} cor={respostas[i].cor}>
-                                <p>Pergunta {respostas[i].id}</p>
-                                <img src={respostas[i].icone} alt={respostas[i].icone}/>
+                            <PerguntaFechada key={countPerguntas} finalizado={cardsFeitos.includes(countPerguntas)} cor={respostas[i].cor} data-test="flashcard">
+                                <p data-test="flashcard-text">Pergunta {respostas[i].id}</p>
+                                <img src={respostas[i].icone} alt={respostas[i].icone} data-test={respostas[i].icone === erroIcone ? "no-icon" : respostas[i].icone === certoIcone ? "zap-icon": respostas[i].icone === quaseIcone ? "partial-icon" : ""}/>
                             </PerguntaFechada>
                         );
                     }
                 }
             }else{
                 return (
-                    <PerguntaAberta  key={countPerguntas}>
-                        <p>{answer}</p>
+                    <PerguntaAberta  key={countPerguntas} data-test="flashcard">
+                        <p data-test="flashcard-text">{answer}</p>
                         <ContainerBotoes>
-                            <StyledButton onClick={() => selecionado(0)} cor={erroCor}>Não lembrei</StyledButton>
-                            <StyledButton onClick={() => selecionado(1)} cor={quaseCor}>Quase não lembrei</StyledButton>
-                            <StyledButton onClick={() => selecionado(2)} cor={certoCor}>Zap!</StyledButton>
+                            <StyledButton onClick={() => selecionado(0)} cor={erroCor} data-test="no-btn">Não lembrei</StyledButton>
+                            <StyledButton onClick={() => selecionado(1)} cor={quaseCor} data-test="partial-btn">Quase não lembrei</StyledButton>
+                            <StyledButton onClick={() => selecionado(2)} cor={certoCor} data-test="zap-btn">Zap!</StyledButton>
                         </ContainerBotoes>
                     </PerguntaAberta>
                 );
             }
         }else{
             return (
-                <PerguntaAberta key={countPerguntas}>
-                    <p>{question}</p>
-                    <img src={virar} alt="virar" onClick={() => setCardsRespostas([...cardsRespostas, countPerguntas])}/>
+                <PerguntaAberta key={countPerguntas} data-test="flashcard">
+                    <p data-test="flashcard-text">{question}</p>
+                    <img src={virar} alt="virar" onClick={() => setCardsRespostas([...cardsRespostas, countPerguntas])} data-test="turn-btn"/>
                 </PerguntaAberta>
             );
         }
     }else{
         return(
-            <PerguntaFechada key={countPerguntas} cor={padraoCor}>
-                <p>Pergunta {countPerguntas}</p>
-                <img src={play} alt="play" onClick={() => setVirados([...virados, countPerguntas])}/>
+            <PerguntaFechada key={countPerguntas} cor={padraoCor} data-test="flashcard">
+                <p data-test="flashcard-text">Pergunta {countPerguntas}</p>
+                <img src={play} alt="play" onClick={() => setVirados([...virados, countPerguntas])} data-test="play-btn"/>
             </PerguntaFechada>
         );
     }

@@ -6,7 +6,7 @@ function TelaInicial({setComecado}){
         <Tela>
           <img src={logo} alt="logo" />
           <h1>ZapRecall</h1>
-          <button onClick={() => setComecado(true)}>Iniciar Recall!</button>
+          <button onClick={() => setComecado(true)} data-test="start-btn">Iniciar Recall!</button>
         </Tela>
     );
 }
@@ -28,9 +28,29 @@ const Tela = styled.div`
     h1{
         text-align: center;
         margin-top: 13px;
+        font-family: 'Righteous';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 45px;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.012em;
+
+        color: #FFFFFF;
     }
 
     button{
+    color: #D70900;
+
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+    text-align: center;
+
     width: 246px;
     height: 54px;
     margin-top: 30px;

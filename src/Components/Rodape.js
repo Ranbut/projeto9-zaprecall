@@ -9,8 +9,8 @@ import cards from "../cards";
 function Rodape({countPerguntas, respostas, cardsFeitos}){
     return(
         <>
-            <RodapeConcluidos>
-                <Resultado>
+            <RodapeConcluidos data-test="footer">
+                <Resultado data-test="finish-text">
                 {(cardsFeitos.length === cards.length) ? <>
                 <span>
                   <img src={respostas.find(e => e.icone === erro) ? triste : festa} alt="" />
