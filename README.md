@@ -49,10 +49,10 @@
 # Bônus (opcional)
 
 - Tela boas vindas
-    - [ ]  Antes de apresentar os cards deverá ser exibido uma tela de boas vindas
+    - [X]  Antes de apresentar os cards deverá ser exibido uma tela de boas vindas
 - Fila de Respostas
-    - [ ]  No rodapé adicionar um fila de resposta. Note que a ordem é de respostas, ou seja, a ordem em que a pessoa respondeu os flashcards e não a ordem numérica deles.
+    - [x]  No rodapé adicionar um fila de resposta. Note que a ordem é de respostas, ou seja, a ordem em que a pessoa respondeu os flashcards e não a ordem numérica deles.
 - Mesagem com resultado
-    - [ ]  Exibir, no rodapé, uma mensagem de parabéns ou de incentivo:
-        - [ ]  Caso a pessoa responda às perguntas apenas com amarelos e verdes, mostrar mesagem “Parabéns!”
-        - [ ]  Caso a pessoa responda pelo menos uma pergunta com vermelho, mostrar mensagem “Putz…”
+    - [x]  Exibir, no rodapé, uma mensagem de parabéns ou de incentivo:
+        - [x]  Caso a pessoa responda às perguntas apenas com amarelos e verdes, mostrar mesagem “Parabéns!”
+        - [x]  Caso a pessoa responda pelo menos uma pergunta com vermelho, mostrar mensagem “Putz…”
