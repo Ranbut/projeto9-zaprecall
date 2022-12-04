@@ -65,6 +65,7 @@ const ContainerResposta = styled.div`
   margin-top: 6px;
   width: 15%;
   justify-content: space-between;
+  font-family: 'Recursive';
 `
 
 export default Rodape;
