@@ -1,10 +1,17 @@
 import styled from "styled-components"
+import certo from "../assets/icone_certo.png";
+import quase from "../assets/icone_quase.png";
+import erro from "../assets/icone_erro.png";
 
-function Rodape({countPerguntas,respostas}){
+
+function Rodape({countPerguntas, respostas}){
     return(
         <>
             <RodapeConcluidos>
                 {respostas.length}/{countPerguntas} CONCLUÍDOS
+                <ContainerResposta>
+                  {respostas.map((p) => <img key={p.id} src={p.icone} alt="" data-test={p.icone === erro ? "no-icon" : p.icone === certo ? "zap-icon": p.icone === quase ? "partial-icon" : ""}/>)}
+                </ContainerResposta>
             </RodapeConcluidos>
         </>
     );
@@ -26,29 +33,11 @@ const RodapeConcluidos = styled.div`
   color: #333333;
   padding: 10px;
 `
-const ContainerBotoes = styled(RodapeConcluidos)`
+const ContainerResposta = styled.div`
   display: flex;
-  width: 80%;
+  margin-top: 6px;
+  width: 15%;
   justify-content: space-between;
-  margin: 20px;
-
-  button {
-    width: 90px;
-  font-family: 'Recursive';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #FFFFFF;
-  background: blue;
-  border-radius: 5px;
-  border: 1px solid blue;
-  padding:5px;
-  }
 `
 
 export default Rodape;
