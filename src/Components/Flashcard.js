@@ -1,13 +1,13 @@
 import styled from "styled-components";
+import play from "../assets/seta_play.png";
 
-function Flashcard({question}, {answer}){
+function Flashcard(props){
+
     return(
         <>
             <PerguntaFechada>
-                Pergunta 1
-                <button>
-                    <img src="./img/seta_play.png" alt="play"/>
-                </button>
+                Pergunta {props.countPerguntas}
+                <img src={play} alt="play" data-test="play-btn"/>
             </PerguntaFechada>
         </>
     );

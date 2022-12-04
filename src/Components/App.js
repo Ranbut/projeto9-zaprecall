@@ -3,6 +3,7 @@ import GlobalStyle from './globalStyle';
 import cards from "../cards";
 import Flashcard from "./Flashcard";
 import Rodape from "./Rodape";
+import logo from "../assets/logo.png";
 import { useState } from 'react';
 
 function App() {
@@ -10,15 +11,29 @@ function App() {
   const [cardsFeitos, setCardsFeitos] = useState([]);
   const [respostas, setRespostas] = useState([]);
 
+  let countPerguntas = 0;
+
+  function renderizaPerguntas(cards){
+    countPerguntas++;
+    return(
+    <Flashcard countPerguntas={countPerguntas} key={countPerguntas}
+     cards={cards} setCardsFeitos={setCardsFeitos}
+     cardsFeitos={cardsFeitos} respostas={respostas}
+    setRespostas={setRespostas}/>
+    );
+  }
+
   return(
     <>
       <GlobalStyle/>
       <ScreenContainer>
         <LogoContainer>
-          <img src="..img/logo.png" alt="logo" />
+          <img src={logo} alt="logo" />
           <h1>ZapRecall</h1>
         </LogoContainer>
-        {cards.map((cards) => <Flashcard key={cards.answer} cards={cards} setCardsFeitos={setCardsFeitos} cardsFeitos={cardsFeitos} respostas={respostas} setRespostas={setRespostas}/>)}
+        <div>
+          {cards.map((cards) => renderizaPerguntas(cards))}
+        </div>
         <Rodape/>
       </ScreenContainer>
   </>
