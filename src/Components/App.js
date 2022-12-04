@@ -13,11 +13,11 @@ function App() {
 
   let countPerguntas = 0;
 
-  function renderizaPerguntas(cards){
+  function renderizarPerguntas(cards){
     countPerguntas++;
     return(
     <Flashcard countPerguntas={countPerguntas} key={countPerguntas}
-     cards={cards} setCardsFeitos={setCardsFeitos}
+     question={cards.question} answer={cards.answer} setCardsFeitos={setCardsFeitos}
      cardsFeitos={cardsFeitos} respostas={respostas}
     setRespostas={setRespostas}/>
     );
@@ -32,7 +32,7 @@ function App() {
           <h1>ZapRecall</h1>
         </LogoContainer>
         <div>
-          {cards.map((cards) => renderizaPerguntas(cards))}
+          {cards.map((cards) => renderizarPerguntas(cards))}
         </div>
         <Rodape/>
       </ScreenContainer>
